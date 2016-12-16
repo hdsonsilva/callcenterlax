@@ -9,7 +9,7 @@
     </author>
     <content src="index.html" />
     <access origin="*" />
-	<gap:config-file platform="android" parent="/manifest" mode="add">
-    <uses-permission android:name="com.some.app.permission.INTERNET" />
-</gap:config-file>
 </widget>
+<gap:config-file platform="android" parent="/manifest" mode="add">
+	    <uses-permission android:name="com.some.app.permission.INTERNET" />
+</gap:config-file>
