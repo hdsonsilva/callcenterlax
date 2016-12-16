@@ -8,9 +8,7 @@
         Softwares HD
     </author>
     <content src="index.html" />
-    <access origin="*" />
+    <access origin="*" subdomains="true" browserOnly="true" />
     
-    	<feature name="http://api.phonegap.com/1.0/network"/>
-	
 	
 </widget>
