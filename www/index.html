@@ -1,140 +1,260 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Framework7 Kitchen Sink</title>
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            position: relative;
-            min-width: 900px;
-            font-family: Helvetica Neue, Roboto, Arial, sans-serif;
-        }
-        iframe {
-            width: 100%;
-            height: 100%;
-            display: block;
-            border: none;
-        }
-        .devices {
-            padding-top: 100px;
-            padding-bottom: 40px;
-            overflow: hidden;
-            width: 840px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-        .device-ios, .device-android {
-            float: left;
-        }
-        .device-ios {
-            width: 320px;
-            height: 548px;
-            background: #111;
-            border-radius: 55px;
-            box-shadow: 0px 0px 0px 2px #aaa;
-            padding: 105px 20px;
-            position: relative;
-            margin-right: 80px;
-        }
-        .device-ios:before {
-            content: '';
-            width: 60px;
-            height: 10px;
-            border-radius: 10px;
-            position: absolute;
-            left: 50%;
-            margin-left: -30px;
-            background: #333;
-            top: 50px;
-        }
-        .device-ios:after {
-            content: '';
-            position: absolute;
-            width: 60px;
-            height: 60px;
-            left: 50%;
-            margin-left: -30px;
-            bottom: 20px;
-            border-radius: 100%;
-            box-sizing: border-box;
-            border: 5px solid #333;
-        }
-        .device-android {
-            width: 360px;
-            height: 640px;
-            position: relative;
-            background: #111;
-            padding: 60px 20px;
-            box-shadow: 0px 0px 0px 2px #aaa;
-            border-radius: 20px;
-        }
-        .device-android:before {
-            content: '';
-            width: 14px;
-            height: 14px;
-            border-radius: 50%;
-            position: absolute;
-            left: 50%;
-            margin-left: -7px;
-            background: #666;
-            top: 25px;
-        }
-        .device-android:after {
-            content: '';
-            width: 8px;
-            height: 8px;
-            border-radius: 50%;
-            position: absolute;
-            left: 50px;
-            background: #444;
-            top: 30px;
-        }
-        .button {
-            position: absolute;
-            width: 200px;
-            margin-left: -100px;
-            left: 50%;
-            top: -44px;
-            margin-top: -30px;
-            box-sizing: border-box;
-            text-align: center;
-            line-height: 44px;
-            border-radius: 3px;
-            text-decoration: none;
-            color: blue;
-            font-size: 14px;
-        }
-        .device-ios .button {
-            border: 1px solid #007aff;
-            color: #007aff;
-        }
-        .device-ios .button:active {
-            background: rgba(0, 122, 255, 0.15);
-        }
-        .device-android .button {
-            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
-            color: #2196f3;
-            text-transform: uppercase;
-        }
-        .device-android .button:active {
-            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
-            background: rgba(0, 0, 0, 0.1);
-        }
-    </style>
-</head>
-<body>
-    <div class="devices">
-        <div class="device device-ios">
-            <a href="./kitchen-sink-ios/" class="button">Full Screen Preview</a>
-            <iframe src="./kitchen-sink-ios/" scrolling="no" frameborder="0"></iframe>
-        </div>
-        <div class="device device-android">
-            <a href="./kitchen-sink-material/" class="button">Full Screen Preview</a>
-            <iframe src="./kitchen-sink-material/" scrolling="no" frameborder="0"></iframe>
-        </div>
-    </div>
-    
-</body>
-</html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+     <meta name="apple-mobile-web-app-capable" content="yes">
+     <meta name="apple-mobile-web-app-status-bar-style" content="black">
+     <title>Call Center</title>
+     <!-- Path to Framework7 Library CSS-->
+     <link rel="stylesheet" href="./css/framework7.ios.min.css">
+     <!-- Path to your custom app styles-->
+     <link rel="stylesheet" href="./css/my-app.css">
+     <link rel="stylesheet" href="./css/person.css">
+     <link rel="stylesheet" href="./css/framework7-icons.css">
+   </head>
+   <body>
+     <!-- Status bar overlay for fullscreen mode-->
+     <div class="statusbar-overlay"></div>
+     <!-- Panels overlay-->
+     <div class="panel-overlay"></div>
+     <!-- Left panel with reveal effect-->
+     <div class="panel panel-left panel-reveal">
+       <div class="content-block">
+         <p>Left panel content goes here</p>
+       </div>
+     </div>
+     <!-- Right panel with cover effect-->
+     <div class="panel panel-right panel-cover">
+       <div class="content-block">
+         <p>Right panel content goes here</p>
+       </div>
+     </div>
+     <!-- Views, and they are tabs-->
+     <!-- We need to set "toolbar-through" class on it to keep space for our tab bar-->
+     <div class="views tabs toolbar-through">
+       <!-- Your first view, it is also a .tab and should have "active" class to make it visible by default-->
+       <div id="view-4" class="view view-main tab active">
+         <!-- Pages-->
+         <div class="pages">
+           <!-- Page, data-page contains page name-->
+           <div data-page="index-1" class="page">
+             <!-- Scrollable page content-->
+             <div class="page-content">
+               <div class="navbar">
+               <div class="navbar-inner">
+                 <div class="center sliding">Configurações</div>
+               </div>
+             </div>
+               <div class="content-block">
+               <p>Bem vindo ao App de monitoramento de CallCenter.</p>
+               <p>Com ele é possivel monitorar seus operadores de onde você estiver.</p>
+               <p>Ele é prático e seguro. Use sempre que precisar.</p>
+               <p>Para iniciar seu uso você precisa configurar os seus dados de acesso. Fique tranquilo, isso será feito somente uma vez.</p>
+                   <p>
+                        <div class="item-content">
+                           <div class="content-block-title">Configuração:</div>
+                       </div>
+                   </p>
+                 </div>
+                 <div class="list-block">
+                   <ul>
+                     <li>
+                       <div class="item-content">
+                         <div class="item-media"><i class="icon icon-form-name"></i></div>
+                         <div class="item-inner"> 
+                           <div class="item-title label">URL</div>
+                           <div class="item-input">
+                             <input type="url" id='__url__' placeholder="Servidor Elastix">
+                           </div>
+                         </div>
+                       </div>
+                     </li>
+                     <li>
+                       <div class="item-content">
+                         <div class="item-media"><i class="icon icon-form-email"></i></div>
+                         <div class="item-inner"> 
+                           <div class="item-title label">Usuário</div>
+                           <div class="item-input">
+                             <input type="text" id='__user__' placeholder="Coloque seu usuario">
+                           </div>
+                         </div>
+                       </div>
+                     </li>
+                     <li>
+                       <div class="item-content">
+                         <div class="item-media"><i class="icon icon-form-url"></i></div>
+                         <div class="item-inner"> 
+                           <div class="item-title label">Senha</div>
+                           <div class="item-input">
+                             <input type="password" id='__passwd__' placeholder="Coloque sua senha">
+                           </div>
+                         </div>
+                       </div>
+                     </li>
+                     <li>
+                       <div class="item-content">
+                         <div class="item-media"><i class="icon icon-form-name"></i></div>
+                         <div class="item-inner"> 
+                           
+                           <div class="item-input">
+                             <p><a href="#" id='salvarconfig' class="button active">Salvar</a></p>
+                           </div>
+                         </div>
+                       </div>
+                     </li>
+                   </div>
+   
+               </div>
+             </div>
+           </div>
+         </div>
+         <!-- Second view (for second wrap)-->
+         <div id="view-1" class="view tab">
+           <!-- We can make with view with navigation, let's add Top Navbar-->
+           <div class="navbar">
+             <div class="navbar-inner">
+               <div class="center sliding"><i class='f7-icons'>filter-fill</i>  Campanhas CallCenter</div>
+             </div>
+           </div>
+           <div class="pages navbar-through">
+             <div data-page="index-2" class="page navbar-fixed toolbar-fixed">
+               <div class="page-content">
+                 <div class="content-block">
+                   <p><i class='f7-icons'>list</i> CAMPANHAS</p>
+                 </div>
+                 <div class="list-block">
+                   <ul>
+                     <li>
+                         <div class="item-content">
+                           <div class="item-inner"> 
+                             <div class="item-title"><span ><a href="campanhas.html" class="link" ><span id='numcampanhas'></span></a></span> Campanhas Ativas </div>
+                           </div>
+                         </div>
+                     </li>
+                     <li>
+                         <div class="item-content"> 
+                           <div class="item-inner">
+                             <div class="item-title"><span ><a href="operadores.html" class="link"><span id='numagentes'></span></a></span> Operadores Logados</div>
+                           </div>
+                         </div>
+                     </li>
+                   </ul>
+                 </div>
+               </div>
+             </div>
+           </div>
+         </div>
+         <div id="view-2" class="view tab">
+           <div class="pages">
+             <div data-page="index-3" class="page">
+               <div class="navbar">
+                 <div class="navbar-inner">
+                   <div class="center"><i class='f7-icons'>phone</i>  Chamadas</div>
+                 </div>
+               </div>
+               <div class="page-content">
+                 <div class="content-block-title"></div>
+                 <div class="content-block">
+                   <p><i class='f7-icons'>today</i> RESUMO:</p>
+                 </div>
+                  <div class="list-block">
+                   <ul id='listatotaisdiscadora'>
+                     <li>
+                       <div class='item-content'>
+                         <div class='item-inner'> 
+                         <div class='item-title  itemtitleperson'>
+                           <div class='circuloresumo floatleft' id='chamadastotalsucesso'>
+                             Sucesso
+                           </div>
+                           <div class='circuloresumo floatleft' id='chamadastotalcurtas'>
+                             Curtas
+                           </div>
+                           <div class='circuloresumo floatright' id='chamadastotalfalhas'>
+                             Falhas
+                           </div>
+                            <div class='circuloresumo floatright' id='chamadastotalnaoatendidas'>
+                             Perdidas
+                           </div>
+                         </div>
+                       </div>
+                     
+                   </li>
+                   </ul>
+                 </div>
+                 <div class="content-block">
+                   
+                   <p><i class='f7-icons'>radio</i> DISCADORA:</p>
+                 </div>
+                  <div class="list-block">
+                   <ul id='listadiscadora'>
+                     
+                   </ul>
+                 </div>
+   
+                 <div class="content-block">
+                   <p><i class='f7-icons'>tape</i> CONECTADOS</p>
+                 </div>
+                 <div class="list-block">
+                   <ul id='listachamadas'>
+                     
+                   </ul>
+                 </div>
+                 
+               </div>
+             </div>
+           </div>
+         </div>
+         <div id="view-3" class="view tab">
+           <div class="pages navbar-fixed">
+             <div data-page="index-4" class="page">
+               <div class="navbar">
+                 <div class="navbar-inner">
+                   <div class="center">Em branco</div>
+                 </div>
+               </div>
+               <div class="page-content">
+                 
+                 <div class="content-block">
+                   <p>Mauris commodo lacus at nisl lacinia, nec facilisis erat rhoncus. Sed eget pharetra nunc. Aenean vitae vehicula massa, sed sagittis ante. Quisque luctus nec velit dictum convallis. Nulla facilisi. Ut sed erat nisi. Donec non dolor massa. Mauris malesuada dolor velit, in suscipit leo consectetur vitae. Duis tempus ligula non eros pretium condimentum. Cras sed dolor odio.</p>
+                 </div>
+               </div>
+             </div>
+           </div>
+           <div id="view-5" class="view tab">
+           <!-- We can make with view with navigation, let's add Top Navbar-->
+           <div class="navbar">
+             <div class="navbar-inner">
+               <div class="center sliding">Campanhas ativas</div>
+             </div>
+           </div>
+           <div class="pages navbar-through">
+             <div data-page="index-5" class="page">
+               <div class="page-content">
+               
+           </div>
+           </div>-      
+       </div>
+       </div>
+  </div>
+  <!-- Bottom Tabbar-->
+  <div class="toolbar tabbar tabbar-labels">
+    <div class="toolbar-inner">
+      
+      <a href="#view-1" class="tab-link viewmenu"><i class="f7-icons">chat</i>
+        <span class="tabbar-label">CallCenter</span>
+      </a>
+      <a href="#view-2" class="tab-link viewmenu"> <i class="f7-icons">book</i><span class="tabbar-label">Ligações</span>
+      </a>
+      <a href="#view-3" class="tab-link viewmenu"> <i class="icon tabbar-demo-icon-4"></i>
+        <span class="tabbar-label">Photos</span>
+      </a>
+      <a href="#view-4" class="tab-link  viewmenu"> <i class="f7-icons">settings</i>
+        <span class="tabbar-label">Config</span>
+      </a>
+  </div>
+<!-- Path to Framework7 Library JS-->
+<script type="text/javascript" src="./js/framework7.min.js"></script>
+<!-- Path to your app js-->
+<script type="text/javascript" src="./js/my-app.js"></script>
+  </body>
