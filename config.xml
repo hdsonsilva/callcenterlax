@@ -9,7 +9,5 @@
     </author>
     <content src="index.html" />
     <access origin="*" />
+	<feature name="http://api.phonegap.com/1.0/network"/>
 </widget>
-<gap:config-file platform="android" parent="/manifest" mode="add">
-	    <uses-permission android:name="com.some.app.permission.INTERNET" />
-</gap:config-file>
