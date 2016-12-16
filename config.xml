@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="io.onsen.helloworld" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <name>CallCenterElax</name>
+    <description>
+        Call Center Elastix - Interagindo com seu sistema de CallCenter
+    </description>
+    <author email="contato@softwareshd.com.br" href="http://www.softwareshd.com.br">
+        Softwares HD
+    </author>
+    <content src="index.html" />
+    <access origin="*" />
+</widget>
