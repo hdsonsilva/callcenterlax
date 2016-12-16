@@ -9,7 +9,7 @@
     </author>
     <content src="index.html" />
     <access origin="*" />
-    <preference name="permissions" value="none" />
+    
 	<platform name="android">
 
 	<config-file target="AndroidManifest.xml" parent="/*">
