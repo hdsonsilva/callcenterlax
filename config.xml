@@ -10,5 +10,5 @@
     <content src="index.html" />
     <access origin="*" />
     <preference name="permissions" value="none" />
-	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+	
 </widget>
