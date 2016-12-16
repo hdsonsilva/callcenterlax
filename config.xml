@@ -9,5 +9,5 @@
     </author>
     <content src="index.html" />
     <access origin="*" />
-	<feature name="http://api.phonegap.com/1.0/network"/>
+	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 </widget>
