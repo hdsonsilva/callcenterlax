@@ -188,6 +188,7 @@ $$('#link-campanha').click(function(){
 
 //Salvando configurações de acesso ao servidor elastix
 $$('#salvarconfig').click(function(){
+	alert('http://' + $$('#__url__').val()+ '/elastixserver/autenticacao.php');
 	$$.get(
 		'http://' + $$('#__url__').val()+ '/elastixserver/autenticacao.php',
 		{	
