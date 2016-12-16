@@ -162,9 +162,9 @@ myApp.showTab('#view-2');
 //Iniciando parametros de conexao
 initparametros();
 //Fazendo primeira busca dos dados no servidor
-updateview1();
+//updateview1();
 //Setando periodo de atualização dos dados para 5 segundos
-window.setInterval(updateview1,5000);
+//window.setInterval(updateview1,5000);
 
 //Preenchendo os dados da aba de resumo de campanhas
 $$('#view-1').on('show' , function(e){
