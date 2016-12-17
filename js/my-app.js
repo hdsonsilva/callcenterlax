@@ -198,7 +198,7 @@ $$(document).on('DOMContentLoaded',function(){
 				'__passwd__':$$('#__passwd__').val()
 			},
 			function(valor){
-
+				
 				if( valor == '' ){
 					localStorage.setItem('__user__', $$('#__user__').val());
 					localStorage.setItem('__passwd__', $$('#__passwd__').val());

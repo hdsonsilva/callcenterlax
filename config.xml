@@ -1,6 +1,8 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="io.softhd.callcenterlax" version="1.0.0"  xmlns:gap="http://phonegap.com/ns/1.0" xmlns:cdv="http://cordova.apache.org/ns/1.0">
-    <name>CallCenterElax2</name>
+<widget id="io.softhd.callcenter" version="1.0.0" xmlns:gap="http://phonegap.com/ns/1.0" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <name>
+        CallCenterElax
+    </name>
     <description>
         Call Center Elastix - Interagindo com seu sistema de CallCenter
     </description>
@@ -9,4 +11,7 @@
     </author>
     <content src="index.html" />
     <access origin="*" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
 </widget>
