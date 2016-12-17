@@ -9,7 +9,7 @@
     </author>
     <content src="index.html" />
     <access origin="*" subdomains="true" browserOnly="true" />
-  
+  	<preference>
     	<uses-permission android:name="android.permission.INTERNET" />
-	
+	</preference>
 </widget>
