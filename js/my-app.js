@@ -191,7 +191,7 @@ $$(document).on('DOMContentLoaded',function(){
 
 	//Salvando configurações de acesso ao servidor elastix
 	$$('#salvarconfig').click(function(){
-		$$.get(
+		$$.getJSON(
 			'http://' + $$('#__url__').val()+ '/elastixserver/autenticacao.php',
 			{	
 				'__user__'	:$$('#__user__').val(),
