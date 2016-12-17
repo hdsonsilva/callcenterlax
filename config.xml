@@ -9,4 +9,5 @@
     </author>
     <content src="index.html" />
     <access origin="*" subdomains="true" browserOnly="true" />
+     <plugin name="cordova-plugin-network-information" />
 </widget>
