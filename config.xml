@@ -8,6 +8,6 @@
         Softwares HD
     </author>
     <content src="index.html" />
-    <access origin="*" subdomains="true" browserOnly="true" />
+    <access origin="*" subdomains="true" browserOnly="false" />
      <plugin name="cordova-plugin-network-information" />
 </widget>
