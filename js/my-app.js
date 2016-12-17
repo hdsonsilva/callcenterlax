@@ -196,6 +196,7 @@ $$('#salvarconfig').click(function(){
 			'__passwd__':$$('#__passwd__').val()
 		},
 		function(valor){
+
 			if( valor == '' ){
 				localStorage.setItem('__user__', $$('#__user__').val());
 				localStorage.setItem('__passwd__', $$('#__passwd__').val());
@@ -208,6 +209,7 @@ $$('#salvarconfig').click(function(){
 			}
 		},
 		function(e){
+			
 			localStorage.setItem('__user__', $$('#__user__').val());
 			localStorage.setItem('__passwd__', $$('#__passwd__').val());
 			localStorage.setItem('__url__', $$('#__url__').val());
