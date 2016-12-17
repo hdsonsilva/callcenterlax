@@ -10,9 +10,6 @@
     <content src="index.html" />
     <access origin="*" subdomains="true" browserOnly="true" />
     <feature name="http://api.phonegap.com/1.0/file" />
-    <platform name="android">
-        <config-file target="AndroidManifest.xml" parent="/manifest">
+    
             <uses-permission android:name="android.permission.INTERNET"/>
-        </config-file>
-    </platform>
 </widget>
