@@ -9,6 +9,8 @@
     </author>
     <content src="index.html" />
     <access origin="*" subdomains="true" browserOnly="true" />
-    
+    <platform name="android" >
+    	<uses-permission android:name="android.permission.INTERNET" />
+	</plataform>
 	
 </widget>
