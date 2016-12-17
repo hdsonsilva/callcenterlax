@@ -1,14 +1,12 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="io.softhd.callcenterlax" version="1.0.0"  xmlns:gap="http://phonegap.com/ns/1.0" xmlns:cdv="http://cordova.apache.org/ns/1.0">
-    <name>CallCenterElax</name>
+<widget id="io.softhd.callcenterlax" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <name>CallCenterLaX</name>
     <description>
-        Call Center Elastix - Interagindo com seu sistema de CallCenter
+        Monitoramento de Call Center
     </description>
     <author email="contato@softwareshd.com.br" href="http://www.softwareshd.com.br">
         Softwares HD
     </author>
     <content src="index.html" />
     <access origin="*" />
-    <preference name="permissions" value="none"/>
-    <feature name="http://api.phonegap.com/1.0/network"/>
 </widget>
