@@ -1,0 +1,30 @@
+.alinhamentoesquerda{
+	text-align: left;
+	float: left;
+}
+.alinhamentodireita{
+	
+	text-align: right;
+	float: right;
+}
+.itemtitleperson{
+	width:100%;
+}
+.circuloresumo{
+	border: 1px solid gray;
+    border-radius: 25px;
+    width:70px;
+    height: 43px;
+    font-size: 10pt;
+    vertical-align: middle;
+    text-align: center;
+    margin: 3px;
+
+}
+.floatleft{
+	float: left;
+}
+
+.floatright{
+	float: right;
+}
