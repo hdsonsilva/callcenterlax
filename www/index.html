@@ -21,7 +21,14 @@
      <!-- Left panel with reveal effect-->
      <div class="panel panel-left panel-reveal">
        <div class="content-block">
-         <p>Left panel content goes here</p>
+         <p>Filtros:</p>
+         
+          Campanhas: 
+          <select id='idfiltrocampanha' class='smart-select'>
+            <option value=''>Todas</option>
+            <option value='01'>Inadimplentes</option>
+          </select>
+         
        </div>
      </div>
      <!-- Right panel with cover effect-->
@@ -46,14 +53,12 @@
                  <div class="center sliding">Configurações</div>
                </div>
              </div>
-               <div class="content-block">
                
-                   <p>
-                        <div class="item-content">
+               
+                   
+                       
                            <div class="content-block-title">Configuração:</div>
-                       </div>
-                   </p>
-                 </div>
+               
                  <div class="list-block">
                    <ul>
                      <li>
@@ -85,6 +90,17 @@
                            <div class="item-title label">Senha</div>
                            <div class="item-input">
                              <input type="password" id='__passwd__' placeholder="Coloque sua senha">
+                           </div>
+                         </div>
+                       </div>
+                     </li>
+                     <li>
+                       <div class="item-content">
+                         <div class="item-media"><i class="icon icon-form-name"></i></div>
+                         <div class="item-inner"> 
+                           
+                           <div class="item-input">
+                             <p><a href="#" class="open-panel">Outras Configurações</a></p>
                            </div>
                          </div>
                        </div>
@@ -184,21 +200,22 @@
                  </div>
                  <div class="content-block">
                    
-                   <p><i class='f7-icons'>radio</i> DISCADORA:</p>
-                 </div>
-                  <div class="list-block">
-                   <ul id='listadiscadora'>
-                     
-                   </ul>
-                 </div>
-   
-                 <div class="content-block">
-                   <p><i class='f7-icons'>tape</i> CONECTADOS</p>
-                 </div>
-                 <div class="list-block">
-                   <ul id='listachamadas'>
-                     
-                   </ul>
+                     <p><i class='f7-icons'>radio</i> DISCADORA:</p>
+                   
+                    <div class="list-block">
+                     <ul id='listadiscadora'>
+                       
+                     </ul>
+                   </div>
+     
+                   <div class="content-block">
+                     <p><i class='f7-icons'>tape</i> CONECTADOS</p>
+                   </div>
+                   <div class="list-block">
+                     <ul id='listachamadas'>
+                       
+                     </ul>
+                    </div>
                  </div>
                  
                </div>
