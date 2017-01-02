@@ -62,7 +62,8 @@ function updateview1(){
 			'__user__'	:$$('#__user__').val(),
 			'__passwd__':$$('#__passwd__').val(),
 			'status'	:'ShortCall',
-			'sintetico'	: '1'
+			'sintetico'	: '1',
+			'campanha'	: $$('#__campanha__').val()
 		},
 		function(jsonn){
 			$$('#chamadastotalcurtas').html(jsonn.Total+'<br>Curtas');
@@ -74,7 +75,8 @@ function updateview1(){
 					'__user__'	:$$('#__user__').val(),
 					'__passwd__':$$('#__passwd__').val(),
 					'status'	:'Failure',
-					'sintetico'	: '1'
+					'sintetico'	: '1',
+					'campanha'	: $$('#__campanha__').val()
 				},
 				function(jsonn){
 					$$('#chamadastotalfalhas').html(jsonn.Total+'<br>Falhas');
@@ -86,7 +88,8 @@ function updateview1(){
 							'__user__'	:$$('#__user__').val(),
 							'__passwd__':$$('#__passwd__').val(),
 							'status'	:'NoAnswer',
-							'sintetico'	: '1'
+							'sintetico'	: '1',
+							'campanha'	: $$('#__campanha__').val()
 						},
 						function(jsonn){
 							var total = parseInt(jsonn.Total);
@@ -97,7 +100,8 @@ function updateview1(){
 									'__user__'	:$$('#__user__').val(),
 									'__passwd__':$$('#__passwd__').val(),
 									'status'	:'Abandoned',
-									'sintetico'	: '1'
+									'sintetico'	: '1',
+									'campanha'	: $$('#__campanha__').val()
 								},
 								function(jsonn){
 									total = total + parseInt(jsonn.Total);
@@ -110,7 +114,8 @@ function updateview1(){
 												'__user__'	:$$('#__user__').val(),
 												'__passwd__':$$('#__passwd__').val(),
 												'status'	:'Success',
-												'sintetico'	: '1'
+												'sintetico'	: '1',
+												'campanha'	: $$('#__campanha__').val()
 											},
 											function(jsonn){
 												$$('#chamadastotalsucesso').html(jsonn.Total+'<br>Sucesso');
