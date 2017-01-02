@@ -24,10 +24,14 @@
          <p>Filtros:</p>
          
           Campanhas: 
-          <select id='idfiltrocampanha' class='smart-select'>
+          <select id='__campanha__' class='smart-select'>
             <option value=''>Todas</option>
             <option value='01'>Inadimplentes</option>
           </select>
+         
+       </div>
+                 </div>
+          
          
        </div>
      </div>
@@ -137,23 +141,28 @@
              <div data-page="index-2" class="page navbar-fixed toolbar-fixed">
                <div class="page-content">
                  <div class="content-block">
-                   <p><i class='f7-icons'>list</i> CAMPANHAS</p>
+                   <p><i class='f7-icons'>list</i> CallCenter</p>
                  </div>
                  <div class="list-block">
                    <ul>
                      <li>
+                        <a href="#view-5" class="item-link tab-link" >
                          <div class="item-content">
                            <div class="item-inner"> 
-                             <div class="item-title"><span ><a href="campanhas.html" class="link" ><span id='numcampanhas'></span></a></span> Campanhas Ativas </div>
+                             <div class="item-title"><span >
+                              <span id='numcampanhas'></span></span> Campanhas Ativas </div>
                            </div>
                          </div>
+                         </a>
                      </li>
                      <li>
+                        <a href="#view-6" class="item-link tab-link" >
                          <div class="item-content"> 
                            <div class="item-inner">
-                             <div class="item-title"><span ><a href="operadores.html" class="link"><span id='numagentes'></span></a></span> Operadores Logados</div>
+                             <div class="item-title"><span ><span id='numagentes'></span></span> Operadores Logados</div>
                            </div>
                          </div>
+                        </a>
                      </li>
                    </ul>
                  </div>
@@ -161,18 +170,61 @@
              </div>
            </div>
          </div>
+         <div id="view-5" class="view tab">
+           <!-- We can make with view with navigation, let's add Top Navbar-->
+           <div class="navbar">
+             <div class="navbar-inner">
+                
+               <div class="center sliding"><i class='f7-icons'>filter-fill</i>  Campanhas</div>
+             </div>
+           </div>
+           <div class="pages navbar-through">
+             <div data-page="index-2" class="page navbar-fixed toolbar-fixed">
+               <div class="page-content">
+                 <div class="content-block">
+                   <p><i class='f7-icons'>list</i> Detalhamento de Campanhas</p>
+                 </div>
+                 <div class="list-block" id='campanhasdetalhes'>
+                   
+                 </div>
+               </div>
+             </div>
+           </div>
+        </div>
+        <div id="view-6" class="view tab">
+           <!-- We can make with view with navigation, let's add Top Navbar-->
+           <div class="navbar">
+             <div class="navbar-inner">
+              
+               <div class="center sliding"><i class='f7-icons'>filter-fill</i>  Agentes</div>
+             </div>
+           </div>
+           <div class="pages navbar-through">
+             <div data-page="index-2" class="page navbar-fixed toolbar-fixed">
+               <div class="page-content">
+                 <div class="content-block">
+                   <p><i class='f7-icons'>list</i> Detalhamento de Agentes Logados</p>
+                 </div>
+                 <div class="list-block" id='agentesdetalhes'>
+                   
+                 </div>
+               </div>
+             </div>
+           </div>
+        </div>
          <div id="view-2" class="view tab">
            <div class="pages">
              <div data-page="index-3" class="page">
                <div class="navbar">
                  <div class="navbar-inner">
-                   <div class="center"><i class='f7-icons'>phone</i>  Chamadas</div>
+                   <div class="center"><i class='f7-icons'>phone</i>  Ligações</div>
                  </div>
                </div>
                <div class="page-content">
                  <div class="content-block-title"></div>
                  <div class="content-block">
-                   <p><i class='f7-icons'>today</i> RESUMO:</p>
+                   <p><i class='f7-icons'>today</i> RESUMO:  </p>
+                   <div id='totaldechamadas' class='circuloresumototal'> </div> 
                  </div>
                   <div class="list-block">
                    <ul id='listatotaisdiscadora'>
@@ -227,7 +279,7 @@
              <div data-page="index-4" class="page">
                <div class="navbar">
                  <div class="navbar-inner">
-                   <div class="center">Em branco</div>
+                   <div class="center">Novidades</div>
                  </div>
                </div>
                <div class="page-content">
@@ -263,7 +315,7 @@
       </a>
       <a href="#view-2" class="tab-link viewmenu"> <i class="f7-icons">book</i><span class="tabbar-label">Ligações</span>
       </a>
-      <a href="#view-3" class="tab-link viewmenu"> <i class="f7-icons">book</i>
+      <a href="#view-3" class="tab-link viewmenu"> <i class="f7-icons">world</i>
         <span class="tabbar-label">News</span>
       </a>
       <a href="#view-4" class="tab-link  viewmenu"> <i class="f7-icons">settings</i>

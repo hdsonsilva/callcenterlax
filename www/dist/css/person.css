@@ -13,14 +13,30 @@
 .circuloresumo{
 	border: 1px solid gray;
     border-radius: 25px;
-    width:70px;
+    width:62px;
     height: 43px;
     font-size: 10pt;
     vertical-align: middle;
     text-align: center;
-    margin: 3px;
-
+    margin: 1px;
 }
+.circuloresumototal{
+	border: 1px solid gray;
+    border-radius: 25px;
+    width:70px;
+    height: 45px;
+    font-size: 10pt;
+    vertical-align: middle;
+    text-align: center;
+    margin: 1px;
+    position: absolute;
+    top:55px; 
+    right:50%;
+    margin-right:-35px;
+    
+    
+}
+
 .floatleft{
 	float: left;
 }

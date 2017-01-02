@@ -7,6 +7,7 @@
         Call Center Elastix - Interagindo com seu sistema de CallCenter. 
         Com esse aplicativo você poderá monitorar as ligações diárias que estão sendo feitas através do seu sistema de CallCenter
     </description>
+     <icon src="callcentericon.png" width="180" height="180" />
     <author email="contato@softwareshd.com.br" href="http://www.softwareshd.com.br">
         Softwares HD
     </author>
