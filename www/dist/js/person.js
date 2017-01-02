@@ -132,6 +132,10 @@ function updateview1(){
 	
 	
 }
+
+
+
+
 //Função que verifica se as configurações foram setadas
 function getConfig(){
 	if(!localStorage.getItem('__user__') || !localStorage.getItem('__passwd__') || !localStorage.getItem('__url__')){

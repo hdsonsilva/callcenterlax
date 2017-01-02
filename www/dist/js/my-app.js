@@ -88,6 +88,10 @@ $$(document).on('DOMContentLoaded',function(){
 		);
 
 	});
+	//Cliques da aba Ligações
+	$$('#totaldechamadas').click(function(){
+		alert('Para detalhar, selecione os totais parciais');
+	});
 
 	//Preenchendo os campos de conexão com o servidor se existirem para exibir para o usuario os campos preenchidos
 	$$('#view-4').on('show' , function(e){
