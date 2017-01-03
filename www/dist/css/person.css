@@ -47,3 +47,15 @@
 .item-hudson{
     font-size: 8pt;
 }
+.select-campanha{
+    width: 140px;
+    height: 20px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    background-color: white;
+    color: black;
+}
+.personalizado{
+    color: white;
+    
+}

@@ -109,14 +109,14 @@ $$(document).on('DOMContentLoaded',function(){
 			},
 			function(jsonn){
 				$$('#titulodetalhe').html("Chamadas com Sucesso");
-				$$('#listadetalhes').html("<ul>");
+				$$('#listadetalhes').html("<div class='list-block'><ul>");
 				$$.each(jsonn, function(index, value){ 
 					 j = '0000' + i ;
 					 j = j.substring((j.length-1)-3);
 				     $$('#listadetalhes').html($$('#listadetalhes').html()+ "<li><div class='item-content'><div class='item-inner'><div class='item-title item-hudson'> "+ j + " | " + value.nomeagente + " | " + value.iniciochamada + " | " + value.phone +" </div></div></div></li>");
 				     i++;
 				});	
-				$$('#listadetalhes').html($$('#listadetalhes').html() + "</ul>");
+				//$$('#listadetalhes').html($$('#listadetalhes').html() + "</ul></div>");
 		
 			}
 		);
@@ -202,7 +202,7 @@ $$(document).on('DOMContentLoaded',function(){
 			},
 			function(jsonn){
 				$$('#titulodetalhe').html("Chamadas com Falhas");
-				$$('#listadetalhes').html("<ul>");
+				$$('#listadetalhes').html("<div class='list-block'><ul>");
 				$$.each(jsonn, function(index, value){ 
 					 j = '0000' + i ;
 					 j = j.substring((j.length-1)-3);
@@ -221,10 +221,10 @@ $$(document).on('DOMContentLoaded',function(){
 						$$.each(jsonn, function(index, value){ 
 							 j = '0000' + i ;
 							 j = j.substring((j.length-1)-3);
-						     $$('#listadetalhes').html($$('#listadetalhes').html()+ "<li><div class='item-content'><div class='item-inner'><div class='item-title item-hudson'> "+ j + " | " + value.nomeagente + " | " + value.iniciochamada + " | " + value.phone +" </div></div></div></li>");
+						     $$('#listadetalhes').html($$('#listadetalhes').html()+ "<div class='list-block'><li><div class='item-content'><div class='item-inner'><div class='item-title item-hudson'> "+ j + " | " + value.nomeagente + " | " + value.iniciochamada + " | " + value.phone +" </div></div></div></li></div>");
 						     i++;
 						});
-						$$('#listadetalhes').html($$('#listadetalhes').html() + "</ul>");
+						$$('#listadetalhes').html($$('#listadetalhes').html() + "</ul></div>");
 					}
 				);	
 				
