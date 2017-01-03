@@ -31,7 +31,8 @@ function updateview1(){
 		'http://' + $$('#__url__').val()+ '/elastixserver/ligacoes.php',
 		{	
 			'__user__'	:$$('#__user__').val(),
-			'__passwd__':$$('#__passwd__').val()
+			'__passwd__':$$('#__passwd__').val(),
+			'campanha'	: $$('#__campanha__').val()
 		},
 		function(jsonn){
 			$$('#listadiscadora').html("");
