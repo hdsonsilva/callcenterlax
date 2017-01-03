@@ -95,6 +95,8 @@ $$(document).on('DOMContentLoaded',function(){
 	$$('#chamadastotalsucesso').on('click' , function(e){
 		var i = 1 ;
 		var j ;
+		var controle = 0;
+		var lista = '' ;
 		$$('#titulodetalhe').html("Carregando ....");
 		$$('#listadetalhes').html("");
 		myApp.showTab('#view-5');
@@ -109,14 +111,19 @@ $$(document).on('DOMContentLoaded',function(){
 			},
 			function(jsonn){
 				$$('#titulodetalhe').html("Chamadas com Sucesso");
-				$$('#listadetalhes').html("<div class='list-block'><ul>");
+				lista = "<div class='list-block'><ul>";
+				controle = jsonn.length ;
+				alert(controle);
 				$$.each(jsonn, function(index, value){ 
 					 j = '0000' + i ;
 					 j = j.substring((j.length-1)-3);
-				     $$('#listadetalhes').html($$('#listadetalhes').html()+ "<li><div class='item-content'><div class='item-inner'><div class='item-title item-hudson'> "+ j + " | " + value.nomeagente + " | " + value.iniciochamada + " | " + value.phone +" </div></div></div></li>");
+				     lista = lista + "<li><div class='item-content'><div class='item-inner'><div class='item-title item-hudson'> "+ j + " | " + value.nomeagente + " | " + value.iniciochamada + " | " + value.phone +" </div></div></div></li>";
 				     i++;
 				});	
-				//$$('#listadetalhes').html($$('#listadetalhes').html() + "</ul></div>");
+				while(i < controle);
+				alert('foi');
+				lista = lista + "</ul></div>";
+				$$('#listadetalhes').html(lista);
 		
 			}
 		);
