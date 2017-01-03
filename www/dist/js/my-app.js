@@ -1,5 +1,6 @@
 var myApp = new Framework7();
 
+var controledetalhe = 0 ;
 // Export selectors engine
 var $$ = Dom7;
 
@@ -47,8 +48,8 @@ $$(document).on('DOMContentLoaded',function(){
 		//window.setInterval(updateview1(),5000);
 	});
 	//Buscando campanhas para exibir quando o usuario selecionar o menu de campanhas
-	$$('#view-5').on('show' , function(e){
-
+	$$('#click-hd-view-2').on('click' , function(e){
+		
 		//window.setInterval(updateview1(),5000);
 		$$.getJSON(
 			'http://' + $$('#__url__').val()+ '/elastixserver/',
@@ -57,19 +58,21 @@ $$(document).on('DOMContentLoaded',function(){
 				'__passwd__':$$('#__passwd__').val()
 			},
 			function(jsonn){
-				$$('#campanhasdetalhes').html("<ul>");
+				$$('#titulodetalhe').html("Campanhas");
+				$$('#listadetalhes').html("<ul>");
 				$$.each(jsonn.Campanhas, function(index, value){ 
-				     $$('#campanhasdetalhes').html($$('#campanhasdetalhes').html()+ "<li><div class='item-content'><div class='item-inner'><div class='item-title'> "+value.name+" </div></div></div></li>");
+				     $$('#listadetalhes').html($$('#listadetalhes').html()+ "<li><div class='item-content'><div class='item-inner'><div class='item-title item-hudson'> "+value.name+" </div></div></div></li>");
 				});
-				$$('#campanhasdetalhes').html($$('#campanhasdetalhes').html() + "</ul>");
+				$$('#listadetalhes').html($$('#listadetalhes').html() + "</ul>");
 		
 			}
 		);
 
 	});
 
-	$$('#view-6').on('show' , function(e){
-
+	$$('#click-hd-view-3').on('click' , function(e){
+		$$('#titulodetalhe').html("Carregando ....");
+		$$('#listadetalhes').html("");
 		//window.setInterval(updateview1(),5000);
 		$$.getJSON(
 			'http://' + $$('#__url__').val()+ '/elastixserver/',
@@ -78,16 +81,159 @@ $$(document).on('DOMContentLoaded',function(){
 				'__passwd__':$$('#__passwd__').val()
 			},
 			function(jsonn){
-				$$('#agentesdetalhes').html("<ul>");
+				$$('#titulodetalhe').html("Agentes");
+				$$('#listadetalhes').html("<ul>");
 				$$.each(jsonn.Agentes, function(index, value){ 
-				     $$('#agentesdetalhes').html($$('#agentesdetalhes').html()+ "<li><div class='item-content'><div class='item-inner'><div class='item-title'> "+value.number + ' - ' + value.name + ( value.id_break ? ' | Parada Solicitada' : '') +" </div></div></div></li>");
+				     $$('#listadetalhes').html($$('#listadetalhes').html()+ "<li><div class='item-content'><div class='item-inner'><div class='item-title'> "+value.number + ' - ' + value.name + ( value.id_break ? ' | Parada Solicitada' : '') +" </div></div></div></li>");
 				});
-				$$('#agentesdetalhes').html($$('#agentesdetalhes').html() + "</ul>");
+				$$('#listadetalhes').html($$('#listadetalhes').html() + "</ul>");
+		
+			}
+		);
+	});
+	//Exibindo analitico de chamadas com sucesso
+	$$('#chamadastotalsucesso').on('click' , function(e){
+		var i = 1 ;
+		var j ;
+		$$('#titulodetalhe').html("Carregando ....");
+		$$('#listadetalhes').html("");
+		myApp.showTab('#view-5');
+		//window.setInterval(updateview1(),5000);
+		$$.getJSON(
+			'http://' + $$('#__url__').val()+ '/elastixserver/chamadasdodia.php',
+			{	
+				'__user__'	:$$('#__user__').val(),
+				'__passwd__':$$('#__passwd__').val(),
+				'status'	:'Success',
+				'campanha'	: $$('#__campanha__').val()
+			},
+			function(jsonn){
+				$$('#titulodetalhe').html("Chamadas com Sucesso");
+				$$('#listadetalhes').html("<ul>");
+				$$.each(jsonn, function(index, value){ 
+					 j = '0000' + i ;
+					 j = j.substring((j.length-1)-3);
+				     $$('#listadetalhes').html($$('#listadetalhes').html()+ "<li><div class='item-content'><div class='item-inner'><div class='item-title item-hudson'> "+ j + " | " + value.nomeagente + " | " + value.iniciochamada + " | " + value.phone +" </div></div></div></li>");
+				     i++;
+				});	
+				$$('#listadetalhes').html($$('#listadetalhes').html() + "</ul>");
 		
 			}
 		);
 
 	});
+	//Exibindo analitico de chamadas curtas
+	$$('#chamadastotalcurtas').on('click' , function(e){
+		var i = 1 ;
+		var j ;
+		$$('#titulodetalhe').html("Carregando ....");
+		$$('#listadetalhes').html("");
+		myApp.showTab('#view-5');
+		//window.setInterval(updateview1(),5000);
+		$$.getJSON(
+			'http://' + $$('#__url__').val()+ '/elastixserver/chamadasdodia.php',
+			{	
+				'__user__'	:$$('#__user__').val(),
+				'__passwd__':$$('#__passwd__').val(),
+				'status'	:'ShortCall',
+				'campanha'	: $$('#__campanha__').val()
+			},
+			function(jsonn){
+				$$('#titulodetalhe').html("Chamadas Curtas");
+				$$('#listadetalhes').html("<ul>");
+				$$.each(jsonn, function(index, value){ 
+					 j = '0000' + i ;
+					 j = j.substring((j.length-1)-3);
+				     $$('#listadetalhes').html($$('#listadetalhes').html()+ "<li><div class='item-content'><div class='item-inner'><div class='item-title item-hudson'> "+ j + " | " + value.nomeagente + " | " + value.iniciochamada + " | "+ value.phone +" </div></div></div></li>");
+				     i++;
+				});	
+				$$('#listadetalhes').html($$('#listadetalhes').html() + "</ul>");
+		
+			}
+		);
+
+	});
+	//Exibindo analitico de chamadas falhas
+	$$('#chamadastotalfalhas').on('click' , function(e){
+		var i = 1 ;
+		var j ;
+		$$('#titulodetalhe').html("Carregando ....");
+		$$('#listadetalhes').html("");
+		myApp.showTab('#view-5');
+		//window.setInterval(updateview1(),5000);
+		$$.getJSON(
+			'http://' + $$('#__url__').val()+ '/elastixserver/chamadasdodia.php',
+			{	
+				'__user__'	:$$('#__user__').val(),
+				'__passwd__':$$('#__passwd__').val(),
+				'status'	:'Fail',
+				'campanha'	: $$('#__campanha__').val()
+			},
+			function(jsonn){
+				$$('#titulodetalhe').html("Chamadas com Falhas");
+				$$('#listadetalhes').html("<ul>");
+				$$.each(jsonn, function(index, value){ 
+					 j = '0000' + i ;
+					 j = j.substring((j.length-1)-3);
+				     $$('#listadetalhes').html($$('#listadetalhes').html()+ "<li><div class='item-content'><div class='item-inner'><div class='item-title item-hudson'> "+ j + " | " + value.nomeagente + " | " + value.iniciochamada + " | " + value.phone +" </div></div></div></li>");
+				     i++;
+				});	
+				$$('#listadetalhes').html($$('#listadetalhes').html() + "</ul>");
+		
+			}
+		);
+
+	});
+	//Exibindo analitico de chamadas perdidas
+	$$('#chamadastotalnaoatendidas').on('click' , function(e){
+		var i = 1 ;
+		var j ;
+		$$('#titulodetalhe').html("Carregando ....");
+		$$('#listadetalhes').html("");
+		myApp.showTab('#view-5');
+		//window.setInterval(updateview1(),5000);
+		$$.getJSON(
+			'http://' + $$('#__url__').val()+ '/elastixserver/chamadasdodia.php',
+			{	
+				'__user__'	:$$('#__user__').val(),
+				'__passwd__':$$('#__passwd__').val(),
+				'status'	:'Abandoned',
+				'campanha'	: $$('#__campanha__').val()
+			},
+			function(jsonn){
+				$$('#titulodetalhe').html("Chamadas com Falhas");
+				$$('#listadetalhes').html("<ul>");
+				$$.each(jsonn, function(index, value){ 
+					 j = '0000' + i ;
+					 j = j.substring((j.length-1)-3);
+				     $$('#listadetalhes').html($$('#listadetalhes').html()+ "<li><div class='item-content'><div class='item-inner'><div class='item-title item-hudson'> "+ j + " | " + value.nomeagente + " | " + value.iniciochamada + " | " + value.phone +" </div></div></div></li>");
+				     i++;
+				});
+				$$.getJSON(
+					'http://' + $$('#__url__').val()+ '/elastixserver/chamadasdodia.php',
+					{	
+						'__user__'	:$$('#__user__').val(),
+						'__passwd__':$$('#__passwd__').val(),
+						'status'	:'Success',
+						'campanha'	: $$('#__campanha__').val()
+					},
+					function(jsonn){
+						$$.each(jsonn, function(index, value){ 
+							 j = '0000' + i ;
+							 j = j.substring((j.length-1)-3);
+						     $$('#listadetalhes').html($$('#listadetalhes').html()+ "<li><div class='item-content'><div class='item-inner'><div class='item-title item-hudson'> "+ j + " | " + value.nomeagente + " | " + value.iniciochamada + " | " + value.phone +" </div></div></div></li>");
+						     i++;
+						});
+						$$('#listadetalhes').html($$('#listadetalhes').html() + "</ul>");
+					}
+				);	
+				
+		
+			}
+		);
+
+	});
+	
 	//Cliques da aba Ligações
 	$$('#totaldechamadas').click(function(){
 		alert('Para detalhar, selecione os totais parciais');
