@@ -13,8 +13,8 @@
     </author>
     <content src="index.html" />
     <access origin="*" />
-    <plugin name="cordova-plugin-whitelist" source="npm" />
-    <plugin name="cordova-plugin-push" source="pgb" />
+    <gap:plugin name="cordova-plugin-whitelist" source="npm" />
+    <gap:plugin name="com.phonegap.plugins.pushplugin" spec="2.5.0" source="pgb" />
     <access origin="*" />
     <allow-intent href="*" />
     <allow-navigation href="*" />
