@@ -17,8 +17,7 @@ $$(document).on('DOMContentLoaded',function(){
 	var view4 = myApp.addView('#view-4');
 	var view5 = myApp.addView('#view-5');
 
-
-
+	
 	//Verificando se as configurações existem no inicio da aplicação
 	if(!getConfig()){
 		alert('É necessário configurar o App');
@@ -113,7 +112,6 @@ $$(document).on('DOMContentLoaded',function(){
 				$$('#titulodetalhe').html("Chamadas com Sucesso");
 				lista = "<div class='list-block'><ul>";
 				controle = jsonn.length ;
-				alert(controle);
 				$$.each(jsonn, function(index, value){ 
 					 j = '0000' + i ;
 					 j = j.substring((j.length-1)-3);
@@ -121,10 +119,9 @@ $$(document).on('DOMContentLoaded',function(){
 				     i++;
 				});	
 				while(i < controle);
-				alert('foi');
+				
 				lista = lista + "</ul></div>";
 				$$('#listadetalhes').html(lista);
-		
 			}
 		);
 
@@ -133,6 +130,7 @@ $$(document).on('DOMContentLoaded',function(){
 	$$('#chamadastotalcurtas').on('click' , function(e){
 		var i = 1 ;
 		var j ;
+		var lista = '';
 		$$('#titulodetalhe').html("Carregando ....");
 		$$('#listadetalhes').html("");
 		myApp.showTab('#view-5');
@@ -147,15 +145,18 @@ $$(document).on('DOMContentLoaded',function(){
 			},
 			function(jsonn){
 				$$('#titulodetalhe').html("Chamadas Curtas");
-				$$('#listadetalhes').html("<ul>");
+				lista = "<div class='list-block'><ul>";
+				controle = jsonn.length ;
 				$$.each(jsonn, function(index, value){ 
 					 j = '0000' + i ;
 					 j = j.substring((j.length-1)-3);
-				     $$('#listadetalhes').html($$('#listadetalhes').html()+ "<li><div class='item-content'><div class='item-inner'><div class='item-title item-hudson'> "+ j + " | " + value.nomeagente + " | " + value.iniciochamada + " | "+ value.phone +" </div></div></div></li>");
+				     lista = lista + "<li><div class='item-content'><div class='item-inner'><div class='item-title item-hudson'> "+ j + " | " + value.nomeagente + " | " + value.iniciochamada + " | " + value.phone +" </div></div></div></li>";
 				     i++;
 				});	
-				$$('#listadetalhes').html($$('#listadetalhes').html() + "</ul>");
-		
+				while(i < controle);
+				
+				lista = lista + "</ul></div>";
+				$$('#listadetalhes').html(lista);
 			}
 		);
 
@@ -164,6 +165,7 @@ $$(document).on('DOMContentLoaded',function(){
 	$$('#chamadastotalfalhas').on('click' , function(e){
 		var i = 1 ;
 		var j ;
+		var lista = '';
 		$$('#titulodetalhe').html("Carregando ....");
 		$$('#listadetalhes').html("");
 		myApp.showTab('#view-5');
@@ -178,15 +180,18 @@ $$(document).on('DOMContentLoaded',function(){
 			},
 			function(jsonn){
 				$$('#titulodetalhe').html("Chamadas com Falhas");
-				$$('#listadetalhes').html("<ul>");
+				lista = "<div class='list-block'><ul>";
+				controle = jsonn.length ;
 				$$.each(jsonn, function(index, value){ 
 					 j = '0000' + i ;
 					 j = j.substring((j.length-1)-3);
-				     $$('#listadetalhes').html($$('#listadetalhes').html()+ "<li><div class='item-content'><div class='item-inner'><div class='item-title item-hudson'> "+ j + " | " + value.nomeagente + " | " + value.iniciochamada + " | " + value.phone +" </div></div></div></li>");
+				     lista = lista + "<li><div class='item-content'><div class='item-inner'><div class='item-title item-hudson'> "+ j + " | " + value.nomeagente + " | " + value.iniciochamada + " | " + value.phone +" </div></div></div></li>";
 				     i++;
 				});	
-				$$('#listadetalhes').html($$('#listadetalhes').html() + "</ul>");
-		
+				while(i < controle);
+				
+				lista = lista + "</ul></div>";
+				$$('#listadetalhes').html(lista);
 			}
 		);
 
@@ -195,6 +200,7 @@ $$(document).on('DOMContentLoaded',function(){
 	$$('#chamadastotalnaoatendidas').on('click' , function(e){
 		var i = 1 ;
 		var j ;
+		var lista = '';
 		$$('#titulodetalhe').html("Carregando ....");
 		$$('#listadetalhes').html("");
 		myApp.showTab('#view-5');
@@ -208,30 +214,37 @@ $$(document).on('DOMContentLoaded',function(){
 				'campanha'	: $$('#__campanha__').val()
 			},
 			function(jsonn){
-				$$('#titulodetalhe').html("Chamadas com Falhas");
+				$$('#titulodetalhe').html("Chamadas Perdidas");
 				$$('#listadetalhes').html("<div class='list-block'><ul>");
+				lista = "<div class='list-block'><ul>";
+				controle = jsonn.length ;
+				
 				$$.each(jsonn, function(index, value){ 
 					 j = '0000' + i ;
 					 j = j.substring((j.length-1)-3);
-				     $$('#listadetalhes').html($$('#listadetalhes').html()+ "<li><div class='item-content'><div class='item-inner'><div class='item-title item-hudson'> "+ j + " | " + value.nomeagente + " | " + value.iniciochamada + " | " + value.phone +" </div></div></div></li>");
+				     lista = lista + "<li><div class='item-content'><div class='item-inner'><div class='item-title item-hudson'> "+ j + " | " + value.nomeagente + " | " + value.iniciochamada + " | " + value.phone +" </div></div></div></li>";
 				     i++;
-				});
+				});	
+				while(i < controle);
 				$$.getJSON(
 					'http://' + $$('#__url__').val()+ '/elastixserver/chamadasdodia.php',
 					{	
 						'__user__'	:$$('#__user__').val(),
 						'__passwd__':$$('#__passwd__').val(),
-						'status'	:'Success',
+						'status'	:'NoAnswer',
 						'campanha'	: $$('#__campanha__').val()
 					},
 					function(jsonn){
+						controle = jsonn.length ;
 						$$.each(jsonn, function(index, value){ 
 							 j = '0000' + i ;
 							 j = j.substring((j.length-1)-3);
-						     $$('#listadetalhes').html($$('#listadetalhes').html()+ "<div class='list-block'><li><div class='item-content'><div class='item-inner'><div class='item-title item-hudson'> "+ j + " | " + value.nomeagente + " | " + value.iniciochamada + " | " + value.phone +" </div></div></div></li></div>");
+						     lista = lista + "<li><div class='item-content'><div class='item-inner'><div class='item-title item-hudson'> "+ j + " | " + value.nomeagente + " | " + value.iniciochamada + " | " + value.phone +" </div></div></div></li>";
 						     i++;
-						});
-						$$('#listadetalhes').html($$('#listadetalhes').html() + "</ul></div>");
+						});	
+						while(i < controle);
+						lista = lista + "</ul></div>";
+						$$('#listadetalhes').html(lista);
 					}
 				);	
 				
@@ -249,6 +262,19 @@ $$(document).on('DOMContentLoaded',function(){
 	//Preenchendo os campos de conexão com o servidor se existirem para exibir para o usuario os campos preenchidos
 	$$('#view-4').on('show' , function(e){
 
+		$$('#__user__').val(localStorage.getItem('__user__'));
+		$$('#__passwd__').val(localStorage.getItem('__passwd__'));
+		$$('#__url__').val(localStorage.getItem('__url__'));
+		$$('#__campanha__').val(localStorage.getItem('__campanha__'));
+
+
+	});
+	$$('#view-2').on('show' , function(e){
+		$$('#chamadastotalfalhas').html('<br>Aguarde...');
+		$$('#chamadastotalcurtas').html('<br>Aguarde...');
+		$$('#chamadastotalnaoatendidas').html('<br>Aguarde...');
+		$$('#chamadastotalsucesso').html('<br>Aguarde...');
+		$$('#totaldechamadas').html('<br>Aguarde...');
 		$$('#__user__').val(localStorage.getItem('__user__'));
 		$$('#__passwd__').val(localStorage.getItem('__passwd__'));
 		$$('#__url__').val(localStorage.getItem('__url__'));
@@ -274,7 +300,7 @@ $$(document).on('DOMContentLoaded',function(){
 	);
 	//Carregando id da campanha
 	 $$('#__campanha__').change(function(){
-	 	localStorage.setItem('__campanha__',$$(this).val());
+	 	localStorage.setItem('__campanha__',$$('#__campanha__').val());
 	 });
 
 	//Salvando configurações de acesso ao servidor elastix

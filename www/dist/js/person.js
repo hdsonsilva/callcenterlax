@@ -7,6 +7,8 @@ function initparametros(){
 	$$('#__user__').val(localStorage.getItem('__user__'));
 	$$('#__passwd__').val(localStorage.getItem('__passwd__'));
 	$$('#__url__').val(localStorage.getItem('__url__'));
+	$$('#__campanha__').val(localStorage.getItem('__campanha__'));
+	
 }
 
 
@@ -55,7 +57,12 @@ function updateview1(){
 	Nao atendidas NoAnswer
 	Curtas ShortCall
 	*/
-		
+	$$('#chamadastotalfalhas').html('<br>Aguarde...');
+	$$('#chamadastotalcurtas').html('<br>Aguarde...');
+	$$('#chamadastotalnaoatendidas').html('<br>Aguarde...');
+	$$('#chamadastotalsucesso').html('<br>Aguarde...');
+	$$('#totaldechamadas').html('<br>Aguarde...');
+
 	//Chamadas Curtas
 	$$.getJSON(
 		'http://' + $$('#__url__').val()+ '/elastixserver/chamadasdodia.php',
