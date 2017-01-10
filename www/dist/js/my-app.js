@@ -336,7 +336,7 @@ $$(document).on('DOMContentLoaded',function(){
 
 	// Configura a notificação, altere o senderID
 	var push = PushNotification.init({
-	  "android": {"senderID": "XXXXXX", icon : "icon"},
+	  "android": {"senderID": "182505207980", icon : "icon"},
 	  "ios": {"alert": "true", "badge": "true", "sound": "true"},
 	  "windows": {}
 	});
