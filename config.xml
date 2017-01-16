@@ -15,7 +15,7 @@
     <access origin="*" />
     
     <gap:plugin name="cordova-plugin-whitelist" source="npm" />
-    <plugin name="com.phonegap.plugins.pushplugin" spec="2.1.1" source="pgb" />
+    <gap:plugin name="phonegap-plugin-push" source="npm" />
     <access origin="*" />
     <allow-intent href="*" />
     <allow-navigation href="*" />
