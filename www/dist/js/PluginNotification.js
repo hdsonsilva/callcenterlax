@@ -29,7 +29,7 @@ PushNotification.prototype.unregister = function(successCallback, errorCallback,
     }
 
     if (typeof successCallback != "function") {
-        console.log("PushNotification.unregister failure: success callback parameter must be a function");
+        console.log("PushNotification.unregister failure: success callback parameter must be a functio");
         return
     }
 
