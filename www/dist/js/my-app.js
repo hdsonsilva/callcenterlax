@@ -40,7 +40,7 @@ $$(document).on('DOMContentLoaded',function(){
 	//Fazendo primeira busca dos dados no servidor
 	updateview1();
 	//Setando periodo de atualização dos dados para 5 segundos
-	window.setInterval(updateview1,5000);
+	window.setInterval(updateview1,10000);
 
 	//Preenchendo os dados da aba de resumo de campanhas
 	$$('#view-1').on('show' , function(e){
@@ -336,18 +336,49 @@ $$(document).on('DOMContentLoaded',function(){
 
 	// Configura a notificação, altere o senderID
 
-	var pushNotification = window.plugins.pushNotification;
-	pushNotification.register(
-		function(result) {
-    		alert('Callback Success! Result = '+result)
-    	}, 
-		function(error) {
-    		alert(error)
-    	},
-		{"senderID":"182505207980","ecb":"app.onNotificationGCM"}
-	);
 
+		// Register for Push Notifications. Requires that phonegap-plugin-push be installed.
+	 var pushRegistration = null;
+	 function registerForPushNotifications() {
+	   pushRegistration = PushNotification.init({
+	       android: { senderID: '182505207980' },
+	       ios: { alert: 'true', badge: 'true', sound: 'true' },
+	       wns: {}
+	   });
 
+	 // Handle the registration event.
+	 pushRegistration.on('registration', function (data) {
+	   // Get the native platform of the device.
+	   var platform = device.platform;
+	   // Get the handle returned during registration.
+	   var handle = data.registrationId;
+	   // Set the device-specific message template.
+	   if (platform == 'android' || platform == 'Android') {
+	       // Register for GCM notifications.
+	       client.push.register('gcm', handle, {
+	           mytemplate: { body: { data: { message: "{$(messageParam)}" } } }
+	       });
+	   } else if (device.platform === 'iOS') {
+	       // Register for notifications.            
+	       client.push.register('apns', handle, {
+	           mytemplate: { body: { aps: { alert: "{$(messageParam)}" } } }
+	       });
+	   } else if (device.platform === 'windows') {
+	       // Register for WNS notifications.
+	       client.push.register('wns', handle, {
+	           myTemplate: {
+	               body: '<toast><visual><binding template="ToastText01"><text id="1">$(messageParam)</text></binding></visual></toast>',
+	               headers: { 'X-WNS-Type': 'wns/toast' } }
+	       });
+	   }
+	 });
+
+	 pushRegistration.on('notification', function (data, d2) {
+	   alert('Push Received: ' + data.message);
+	 });
+
+	 pushRegistration.on('error', handleError);
+	 }
 	
 
 });
