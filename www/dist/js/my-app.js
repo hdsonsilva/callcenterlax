@@ -382,13 +382,3 @@ $$(document).on('DOMContentLoaded',function(){
 	
 
 });
-/*
-$$(document).on('pageInit', function (e) {
-    var page = e.detail.page;
-    // Code for About page
-
-    if (page.name === 'about') {
-    	alert('Iniciando pagina');
-    }
-    
-});*/
