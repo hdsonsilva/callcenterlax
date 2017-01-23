@@ -349,6 +349,7 @@ $$(document).on('DOMContentLoaded',function(){
 	 // Handle the registration event.
 	 pushRegistration.on('registration', function (data) {
 	   // Get the native platform of the device.
+	   alert('chegou no registro????');
 	   var platform = device.platform;
 	   // Get the handle returned during registration.
 	   var handle = data.registrationId;
