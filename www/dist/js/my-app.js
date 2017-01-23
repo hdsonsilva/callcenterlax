@@ -336,7 +336,7 @@ $$(document).on('DOMContentLoaded',function(){
 
 	// Configura a notificação, altere o senderID
 
-	alert('chegou no registro????');
+
 		// Register for Push Notifications. Requires that phonegap-plugin-push be installed.
 	 var pushRegistration = null;
 	 function registerForPushNotifications() {
@@ -345,7 +345,7 @@ $$(document).on('DOMContentLoaded',function(){
 	       ios: { alert: 'true', badge: 'true', sound: 'true' },
 	       wns: {}
 	   });
-	   
+	alert('chegou nesse registro????');   
 	 // Handle the registration event.
 	 pushRegistration.on('registration', function (data) {
 	   // Get the native platform of the device.
@@ -372,6 +372,7 @@ $$(document).on('DOMContentLoaded',function(){
 	               headers: { 'X-WNS-Type': 'wns/toast' } }
 	       });
 	   }
+	   alert('Tudo Funcionou');   
 	 });
 
 	 pushRegistration.on('notification', function (data, d2) {
