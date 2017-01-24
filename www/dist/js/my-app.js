@@ -334,58 +334,29 @@ $$(document).on('DOMContentLoaded',function(){
 		);
 	});
 
+ 
 	// Configura a notificação, altere o senderID
+	var push = PushNotification.init({
+	  "android": {"senderID": "182505207980", icon : "icon"},
+	  "ios": {"alert": "true", "badge": "true", "sound": "true"},
+	  "windows": {}
+	});
 
+	// veja a explicação seguir
+	push.on('registration', function(data) {
+	   console.log(data.registrationId);
+	   alert(data.registrationId);
+	});
 
-		// Register for Push Notifications. Requires that phonegap-plugin-push be installed.
-	var pushRegistration = null;
-	function registerForPushNotifications() {
-		alert('oi');
-	   pushRegistration = PushNotification.init({
-	       android: { senderID: '182505207980' },
-	       ios: { alert: 'true', badge: 'true', sound: 'true' },
-	       wns: {}
-	   });
-	   alert('oi 2');
-	 // Handle the registration event.
-	 pushRegistration.on('registration', function (data) {
-	   // Get the native platform of the device.
-	   
-	   var platform = device.platform;
-	   // Get the handle returned during registration.
-	   var handle = data.registrationId;
-	   // Set the device-specific message template.
-	   if (platform == 'android' || platform == 'Android') {
-	       // Register for GCM notifications.
-	       client.push.register('gcm', handle, {
-	           mytemplate: { body: { data: { message: "{$(messageParam)}" } } }
-	       });
-	   } else if (device.platform === 'iOS') {
-	       // Register for notifications.            
-	       client.push.register('apns', handle, {
-	           mytemplate: { body: { aps: { alert: "{$(messageParam)}" } } }
-	       });
-	   } else if (device.platform === 'windows') {
-	       // Register for WNS notifications.
-	       client.push.register('wns', handle, {
-	           myTemplate: {
-	               body: '<toast><visual><binding template="ToastText01"><text id="1">$(messageParam)</text></binding></visual></toast>',
-	               headers: { 'X-WNS-Type': 'wns/toast' } }
-	       });
-	   }
-	   alert('Tudo Funcionou');   
-	 });
+	// O que fazer quando clicar em uma notificação
+	push.on('notification', function(data) {
+	  alert('Notificação acionada, agora deve-se implementar a navegação no app de acordo com os dados: ' + JSON.stringify(data));
+	});
 
-	 pushRegistration.on('notification', function (data, d2) {
-	   alert('Push Received: ' + data.message);
-	 });
-
-	 pushRegistration.on('error', handleError);
-	 alert('oi 3');
-	}
-
-	registerForPushNotifications();
-	alert('oi 4');
+	// erro caso não possa registrar (veja a explicação seguir)
+	push.on('error', function(e) {
+	  alert('registration error: ' + e.message);
+	});
 
 });
 m
