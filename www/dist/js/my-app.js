@@ -346,6 +346,7 @@ $$(document).on('DOMContentLoaded',function(){
 	       ios: { alert: 'true', badge: 'true', sound: 'true' },
 	       wns: {}
 	   });
+	   alert('oi 2');
 	 // Handle the registration event.
 	 pushRegistration.on('registration', function (data) {
 	   // Get the native platform of the device.
@@ -380,9 +381,11 @@ $$(document).on('DOMContentLoaded',function(){
 	 });
 
 	 pushRegistration.on('error', handleError);
+	 alert('oi 3');
 	}
 
 	registerForPushNotifications();
-	
+	alert('oi 4');
 
 });
+m
