@@ -340,6 +340,7 @@ $$(document).on('DOMContentLoaded',function(){
 		// Register for Push Notifications. Requires that phonegap-plugin-push be installed.
 	var pushRegistration = null;
 	function registerForPushNotifications() {
+		alert('oi');
 	   pushRegistration = PushNotification.init({
 	       android: { senderID: '182505207980' },
 	       ios: { alert: 'true', badge: 'true', sound: 'true' },
