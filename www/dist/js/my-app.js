@@ -381,6 +381,7 @@ $$(document).on('DOMContentLoaded',function(){
 		{ 
         	pushNotification = window.plugins.pushNotification;
       		//$("#app-status-ul").append('<li>Registrando o ' + device.platform + '</li>');
+      		$$("#loggg").append('<li>Registrando o ' + device.platform + '</li>');
       		alert('Registrando o ' + device.platform );
         	if (device.platform == 'android' || device.platform == 'Android' ||
                     device.platform == 'amazon-fireos' ) {
@@ -393,6 +394,7 @@ $$(document).on('DOMContentLoaded',function(){
 		{ 
 			txt="Um erro ocorreu.\n\n"; 
 			txt+="Descrição do erro: " + err.message + "\n\n"; 
+			$$("#loggg").append(txt);
 			alert(txt); 
 		} 
     }
