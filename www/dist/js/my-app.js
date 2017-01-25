@@ -353,7 +353,7 @@ $$(document).on('DOMContentLoaded',function(){
 	});
 	*/
 	var pushNotification;
-    var device ;
+    
     function onDeviceReady() {
         //$("#app-status-ul").append('<li>Device ok. Evento ativado.</li>');
         alert('Device ok. Evento ativado');
@@ -380,12 +380,12 @@ $$(document).on('DOMContentLoaded',function(){
 		try 
 		{ 
         	pushNotification = window.plugins.pushNotification;
-        	device = window.device ;
+        	
       		//$("#app-status-ul").append('<li>Registrando o ' + device.platform + '</li>');
-      		$$("#loggg").append('<li>Registrando o ' + device.platform + '</li>');
-      		alert('Registrando o ' + device.platform );
-        	if (device.platform == 'android' || device.platform == 'Android' ||
-                    device.platform == 'amazon-fireos' ) {
+      		$$("#loggg").append('<li>Registrando o ' + window.device.platform + '</li>');
+      		alert('Registrando o ' + window.device.platform );
+        	if (window.device.platform == 'android' || window.device.platform == 'Android' ||
+                    window.device.platform == 'amazon-fireos' ) {
 				pushNotification.register(successHandler, errorHandler, {"senderID":"182505207980","ecb":"onNotification"});		// required!
 			} else {
             	pushNotification.register(tokenHandler, errorHandler, {"badge":"true","sound":"true","alert":"true","ecb":"onNotificationAPN"});	// required!
