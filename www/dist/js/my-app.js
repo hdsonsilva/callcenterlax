@@ -376,9 +376,9 @@ $$(document).on('DOMContentLoaded',function(){
 				navigator.app.backHistory();
 			}
 		}, false);
-		
-		try{ 
-			alert('Registrando o ' + device.platform );
+	
+		try 
+		{ 
         	pushNotification = window.plugins.pushNotification;
       		//$("#app-status-ul").append('<li>Registrando o ' + device.platform + '</li>');
       		$$("#loggg").append('<li>Registrando o ' + device.platform + '</li>');
@@ -496,6 +496,6 @@ $$(document).on('DOMContentLoaded',function(){
         alert('erro:'+ error);
     }
     
-	onDeviceReady();
+	document.addEventListener('deviceready', onDeviceReady(), true);
 
 });
