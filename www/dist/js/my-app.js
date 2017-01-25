@@ -385,7 +385,7 @@ $$(document).on('DOMContentLoaded',function(){
       		alert('Registrando o ' + device.platform );
         	if (device.platform == 'android' || device.platform == 'Android' ||
                     device.platform == 'amazon-fireos' ) {
-	pushNotification.register(successHandler, errorHandler, {"senderID":"182505207980","ecb":"onNotification"});		// required!
+				pushNotification.register(successHandler, errorHandler, {"senderID":"182505207980","ecb":"onNotification"});		// required!
 			} else {
             	pushNotification.register(tokenHandler, errorHandler, {"badge":"true","sound":"true","alert":"true","ecb":"onNotificationAPN"});	// required!
         	}
@@ -496,6 +496,6 @@ $$(document).on('DOMContentLoaded',function(){
         alert('erro:'+ error);
     }
     
-	document.addEventListener('deviceready', onDeviceReady, true);
+	onDeviceReady();
 
 });
