@@ -14,6 +14,9 @@
     <content src="index.html" />
     <access origin="*" />
     <gap:plugin name="cordova-plugin-device"  source="npm"/>
+    <gap:plugin name="cordova-plugin-device-motion"  source="npm"/>
+    <gap:plugin name="cordova-plugin-media"  source="npm"/>
+    <gap:plugin name="cordova-plugin-device-orientation"  source="npm"/>
     <gap:plugin name="cordova-plugin-whitelist" source="npm" />
     <gap:plugin name="phonegap-plugin-push" source="npm" />
     <access origin="*" />
