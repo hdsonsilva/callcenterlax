@@ -353,7 +353,7 @@ $$(document).on('DOMContentLoaded',function(){
 	});
 	*/
 	var pushNotification;
-            
+    var device ;
     function onDeviceReady() {
         //$("#app-status-ul").append('<li>Device ok. Evento ativado.</li>');
         alert('Device ok. Evento ativado');
@@ -380,6 +380,7 @@ $$(document).on('DOMContentLoaded',function(){
 		try 
 		{ 
         	pushNotification = window.plugins.pushNotification;
+        	device = window.device ;
       		//$("#app-status-ul").append('<li>Registrando o ' + device.platform + '</li>');
       		$$("#loggg").append('<li>Registrando o ' + device.platform + '</li>');
       		alert('Registrando o ' + device.platform );
