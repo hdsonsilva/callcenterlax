@@ -376,9 +376,8 @@ $$(document).on('DOMContentLoaded',function(){
 				navigator.app.backHistory();
 			}
 		}, false);
-		alert('Registrando o ' + device.platform );
-		try 
-		{ 
+		
+		try{ 
 			alert('Registrando o ' + device.platform );
         	pushNotification = window.plugins.pushNotification;
       		//$("#app-status-ul").append('<li>Registrando o ' + device.platform + '</li>');
