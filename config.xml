@@ -20,7 +20,7 @@
     <gap:plugin name="cordova-plugin-device-orientation"  source="npm"/>
     <gap:plugin name="cordova-plugin-whitelist" source="npm" />
     <gap:plugin name="cordova-plugin-console" source="npm" />
-    <gap:plugin name="cordova-plugin-inappbrowse" source="npm" />
+    <gap:plugin name="cordova-plugin-inappbrowser" source="npm" />
     <gap:plugin name="cordova-plugin-push-notification" source="npm" />
     <access origin="*" />
     <allow-intent href="*" />
