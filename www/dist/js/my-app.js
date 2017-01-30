@@ -353,7 +353,6 @@ $$(document).on('DOMContentLoaded',function(){
 	});
 	*/
 	var pushNotification;
-    var device = window.plugins.device ;
     function onDeviceReady() {
         //$("#app-status-ul").append('<li>Device ok. Evento ativado.</li>');
         alert('Device ok. Evento ativado');
