@@ -14,7 +14,7 @@
     <content src="index.html" />
     <access origin="*" />
     
-    
+    <gap:plugin name="cordova-plugin"  source="npm"/>
     <gap:plugin name="cordova-plugin-device"  source="npm"/>
     <gap:plugin name="cordova-plugin-device-motion"  source="npm"/>
     <gap:plugin name="cordova-plugin-device-orientation"  source="npm"/>
