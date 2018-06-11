@@ -1,6 +1,6 @@
 function atualizahoralast(){
 	var hora = new Date();
-	$$('.horalast').html();
+	$$('.horalast').html('Ultima atualizacao: '+hora);
 }
 
 function initparametros(){
@@ -57,11 +57,11 @@ function updateview1(){
 	Nao atendidas NoAnswer
 	Curtas ShortCall
 	*/
-	$$('#chamadastotalfalhas').html('<br>Aguarde...');
-	$$('#chamadastotalcurtas').html('<br>Aguarde...');
-	$$('#chamadastotalnaoatendidas').html('<br>Aguarde...');
-	$$('#chamadastotalsucesso').html('<br>Aguarde...');
-	$$('#totaldechamadas').html('<br>Aguarde...');
+	//$$('#chamadastotalfalhas').html('<br>Aguarde...');
+	//$$('#chamadastotalcurtas').html('<br>Aguarde...');
+	//$$('#chamadastotalnaoatendidas').html('<br>Aguarde...');
+	//$$('#chamadastotalsucesso').html('<br>Aguarde...');
+	//$$('#totaldechamadas').html('<br>Aguarde...');
 
 	//Chamadas Curtas
 	$$.getJSON(
