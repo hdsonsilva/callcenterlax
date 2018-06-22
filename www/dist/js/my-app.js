@@ -84,12 +84,13 @@ $$(document).on('DOMContentLoaded',function(){
 				'__passwd__':$$('#__passwd__').val()
 			},
 			function(jsonn){
-				$$('#titulodetalhe').html("Agentes");
-				$$('#listadetalhes').html("<ul>");
+				$$('#titulodetalhe').html("Agentes Logados");
+				tmp = "<ul>";
 				$$.each(jsonn.Agentes, function(index, value){ 
-				     $$('#listadetalhes').html($$('#listadetalhes').html()+ "<li><div class='item-content'><div class='item-inner'><div class='item-title'> "+value.number + ' - ' + value.name + ( value.id_break ? ' | Parada Solicitada' : '') +" </div></div></div></li>");
+				     tmp +=  "<li><div class='item-content'><div class='item-inner'><div class='item-title'> "+value.number + ' - ' + value.name + ( value.id_break ? ' | Parada Solicitada' : '') +" </div></div></div></li>";
 				});
-				$$('#listadetalhes').html($$('#listadetalhes').html() + "</ul>");
+				tmp += "</ul>" ;
+				$$('#listadetalhes').html( tmp );
 		
 			}
 		);
