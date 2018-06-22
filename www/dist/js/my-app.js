@@ -16,6 +16,7 @@ $$(document).on('DOMContentLoaded',function(){
 	var view3 = myApp.addView('#view-3');
 	var view4 = myApp.addView('#view-4');
 	var view5 = myApp.addView('#view-5');
+	var tmp = '';
 
 	
 	//Verificando se as configurações existem no inicio da aplicação
@@ -58,11 +59,14 @@ $$(document).on('DOMContentLoaded',function(){
 			},
 			function(jsonn){
 				$$('#titulodetalhe').html("Campanhas");
-				$$('#listadetalhes').html("<ul>");
+
+				tmp = '';
+				tmp = "<ul>";
 				$$.each(jsonn.Campanhas, function(index, value){ 
-				     $$('#listadetalhes').html($$('#listadetalhes').html()+ "<li><div class='item-content'><div class='item-inner'><div class='item-title item-hudson'> "+value.name+" </div></div></div></li>");
+				     tmp += $$('#listadetalhes').html()+ "<li><div class='item-content'><div class='item-inner'><div class='item-title item-hudson'> "+value.name+" </div></div></div></li>";
 				});
-				$$('#listadetalhes').html($$('#listadetalhes').html() + "</ul>");
+				tmp += "</ul>" ; 
+				$$('#listadetalhes').html( tmp );
 		
 			}
 		);
@@ -386,14 +390,30 @@ $$(document).on('DOMContentLoaded',function(){
       		alert('Registrando o ' + device.platform );
         	if (device.platform == 'android' || device.platform == 'Android' ||
                     device.platform == 'amazon-fireos' ) {
-				pushNotification.register(successHandler, errorHandler, {"senderID":"182505207980","ecb":"onNotification"});		// required!
+				pushNotification.register(
+					successHandler, 
+					errorHandler, 
+					{
+						"senderID":"182505207980",
+						"ecb":"onNotification"
+					}
+				);		// required!
 			} else {
-            	pushNotification.register(tokenHandler, errorHandler, {"badge":"true","sound":"true","alert":"true","ecb":"onNotificationAPN"});	// required!
+            	pushNotification.register(
+            		tokenHandler, 
+            		errorHandler, 
+            		{
+            			"badge":"true",
+            			"sound":"true",
+            			"alert":"true",
+            			"ecb":"onNotificationAPN"
+            		}
+            	);	// required!
         	}
         }
 		catch(err) 
 		{ 
-			txt="Um erro ocorreu.\n\n"; 
+			txt="Um erro ocorreu ao registrar o dispositivo para notificacoes push.\n\n"; 
 			txt+="Descrição do erro: " + err.message + "\n\n"; 
 			$$("#loggg").append(txt);
 			alert(txt); 
