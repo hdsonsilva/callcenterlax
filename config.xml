@@ -4,7 +4,7 @@
         CallCenterElax
     </name>
     <description>
-        Call Center Elastix - Interagindo com seu sistema de CallCenter Elastix. 
+        Call Center Elastix - 1 Interagindo com seu sistema de CallCenter Elastix. 
         Com esse aplicativo você poderá monitorar as ligações diárias que estão sendo feitas através do seu sistema de CallCenter.
 	Ele se integra ao sistema Elastix que voce usa em sua empresa.
     </description>
@@ -14,24 +14,15 @@
     </author>
     <content src="index.html" />
     <access origin="*" />
-   <plugin name="cordova-plugin-console" spec="1.1.0" />
-
-<plugin name="cordova-plugin-device" spec="2.0.2" />
-
-<plugin name="cordova-plugin-dialogs" spec="2.0.1" />
-
-<plugin name="cordova-plugin-globalization" spec="1.11.0" />
-
-<plugin name="cordova-plugin-media" spec="5.0.2" />
-
-<plugin name="cordova-plugin-network-information" spec="2.0.1" />
-
-<plugin name="cordova-plugin-push-notification" spec="2.5.2" />
-
-<plugin name="cordova-plugin-splashscreen" spec="5.0.2" />
-
-<plugin name="cordova-plugin-vibration" spec="3.1.0" />
-
+    <plugin name="cordova-plugin-console" spec="1.1.0" />
+    <plugin name="cordova-plugin-device" spec="2.0.2" />
+    <plugin name="cordova-plugin-dialogs" spec="2.0.1" />
+    <plugin name="cordova-plugin-globalization" spec="1.11.0" />
+    <plugin name="cordova-plugin-media" spec="5.0.2" />
+    <plugin name="cordova-plugin-network-information" spec="2.0.1" />
+    <plugin name="cordova-plugin-push-notification" spec="2.5.2" />
+    <plugin name="cordova-plugin-splashscreen" spec="5.0.2" />
+    <plugin name="cordova-plugin-vibration" spec="3.1.0" />
     <access origin="*" />
     <allow-navigation href="*" />
 
