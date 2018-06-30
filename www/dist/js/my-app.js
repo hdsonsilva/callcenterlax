@@ -362,16 +362,6 @@ $$(document).on('DOMContentLoaded',function(){
 		);
 	});
 
-
-
-
-
-
-
-
- 
-
-
 	
     
 	//document.addEventListener('deviceready', onDeviceReady(), true);
