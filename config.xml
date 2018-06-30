@@ -24,12 +24,6 @@
 <preference name="windows-appx-target" value="8.1-phone" />
 <preference name="WindowsToastCapable" value="true" />
     <access origin="*" />
-    <allow-navigation href="*" />
-
-    <allow-intent href="http://*/*" />
-    <allow-intent href="https://*/*" />
-    <allow-intent href="geo:*" />
-    <platform name="android">
-        <allow-intent href="market:*" />
+    
     </platform>
 </widget>
