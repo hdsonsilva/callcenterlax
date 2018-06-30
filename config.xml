@@ -13,7 +13,7 @@
         Softwares HD
     </author>
     <content src="index.html" />
-    <gap:plugin name="onesignal-cordova-plugin" source="npm" />
+    <gap:plugin name="onesignal-cordova-plugin" spec="2.4.1" source="npm" />
 
 <!-- Requires cli-8.0.0 but we recommend using the latest version. -->
 <preference name="phonegap-version" value="cli-8.0.0" />
