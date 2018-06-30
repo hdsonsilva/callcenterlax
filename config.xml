@@ -23,7 +23,5 @@
 <!-- Can omit if not targetting Windows Phone -->
 <preference name="windows-appx-target" value="8.1-phone" />
 <preference name="WindowsToastCapable" value="true" />
-    <access origin="*" />
     
-    </platform>
 </widget>
