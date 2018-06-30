@@ -7,6 +7,27 @@ var $$ = Dom7;
 // Initialize your app
 $$(document).on('DOMContentLoaded',function(){
 
+	
+	// Add to index.js or the first page that loads with your app.
+	// For Intel XDK and please add this to your app.js.
+
+	document.addEventListener('deviceready', function () {
+	  // Enable to debug issues.
+	  // window.plugins.OneSignal.setLogLevel({logLevel: 4, visualLevel: 4});
+	  
+	  var notificationOpenedCallback = function(jsonData) {
+	    console.log('notificationOpenedCallback: ' + JSON.stringify(jsonData));
+	  };
+
+	  window.plugins.OneSignal
+	    .startInit("7bf5d508-d86e-4c4d-ad52-80611a5759fa")
+	    .handleNotificationOpened(notificationOpenedCallback)
+	    .endInit();
+	}, false);
+
+
+
+
 	// Add views
 	var view1 = myApp.addView('#view-1', {
 	    // Because we use fixed-through navbar we can enable dynamic navbar
@@ -17,6 +38,8 @@ $$(document).on('DOMContentLoaded',function(){
 	var view4 = myApp.addView('#view-4');
 	var view5 = myApp.addView('#view-5');
 	var tmp = '';
+
+
 
 	
 	//Verificando se as configurações existem no inicio da aplicação
@@ -349,175 +372,8 @@ $$(document).on('DOMContentLoaded',function(){
  
 
 
-	// Configura a notificação, altere o senderID
-	/*
-	var push = PushNotification.init({
-	  "android": {"senderID": "182505207980", icon : "icon"},
-	  "ios": {"alert": "true", "badge": "true", "sound": "true"},
-	  "windows": {}
-	});
-	*/
-	var pushNotification;
 	
-    function onDeviceReady() {
-        //$("#app-status-ul").append('<li>Device ok. Evento ativado.</li>');
-        //alert('Device ok. Evento ativado');
-        
-		document.addEventListener("backbutton", function(e)
-		{
-        	//$("#app-status-ul").append('<li>backbutton clicado.</li>');
-        	alert('backbutton clicado.');
-				
-				//if( $("#home").length > 0)
-			if(1)
-			{
-				// call this to get a new token each time. don't call it to reuse existing token.
-				//pushNotification.unregister(successHandler, errorHandler);
-				e.preventDefault();
-				navigator.app.exitApp();
-			}
-			else
-			{
-				navigator.app.backHistory();
-			}
-		}, false);
-	
-		try 
-		{ 
-        	pushNotification = window.plugins.pushNotification;
-        	
-      		//$("#app-status-ul").append('<li>Registrando o ' + device.platform + '</li>');
-      		$$("#loggg").append('<li>Registrando o ' + device.platform + '</li>');
-      		alert('Registrando o ' + device.platform );
-        	if (device.platform == 'android' || device.platform == 'Android' ||
-                    device.platform == 'amazon-fireos' ) {
-				pushNotification.register(
-					successHandler, 
-					errorHandler, 
-					{
-						"senderID":"182505207980",
-						"ecb":"onNotification"
-					}
-				);		// required!
-			} else {
-            	pushNotification.register(
-            		tokenHandler, 
-            		errorHandler, 
-            		{
-            			"badge":"true",
-            			"sound":"true",
-            			"alert":"true",
-            			"ecb":"onNotificationAPN"
-            		}
-            	);	// required!
-        	}
-        }
-		catch(err) 
-		{ 
-			txt="Um erro ocorreu ao registrar o dispositivo para notificacoes push.\n\n"; 
-			txt+="Descrição do erro: " + err.message + "\n\n"; 
-			$$("#loggg").append(txt);
-			alert(txt); 
-		} 
-    }
     
-    // handle APNS notifications for iOS
-    function onNotificationAPN(e) {
-        if (e.alert) {
-             //$("#app-status-ul").append('<li>push-notificação: ' + e.alert + '</li>');
-             alert('push-notificação: ' + e.alert);
-             // showing an alert also requires the org.apache.cordova.dialogs plugin
-             navigator.notification.alert(e.alert);
-        }
-            
-        if (e.sound) {
-            // playing a sound also requires the org.apache.cordova.media plugin
-            var snd = new Media(e.sound);
-            snd.play();
-        }
-        
-        if (e.badge) {
-            pushNotification.setApplicationIconBadgeNumber(successHandler, e.badge);
-        }
-    }
-    
-    // handle GCM notifications for Android
-    function onNotification(e) {
-        //$("#app-status-ul").append('<li>EVENTO -> RECEBIDO:' + e.event + '</li>');
-        alert('EVENTO -> RECEBIDO:' + e.event );
-        
-        switch( e.event )
-        {
-            case 'registered':
-			if ( e.regid.length > 0 )
-			{
-				//$("#app-status-ul").append('<li>REGISTRANDO -> REGID: \n\n' + e.regid + "\n\n</li>");
-				alert('REGISTRANDO -> REGID: \n\n' + e.regid );
-				// Your GCM push server needs to know the regID before it can push to this device
-				// here is where you might want to send it the regID for later use.
-				//console.log("regID = " + e.regid);
-			}
-            break;
-            
-            case 'message':
-            	// if this flag is set, this notification happened while we were in the foreground.
-            	// you might want to play a sound to get the user's attention, throw up a dialog, etc.
-            	if (e.foreground)
-            	{
-					$("#app-status-ul").append('<li>--NOTIFICAÇÕES IN LINE--' + '</li>');
-				      
-				        // on Android soundname is outside the payload. 
-			                // On Amazon FireOS all custom attributes are contained within payload
-			                var soundfile = e.soundname || e.payload.sound;
-			                // if the notification contains a soundname, play it.
-			                // playing a sound also requires the org.apache.cordova.media plugin
-			                var my_media = new Media("/android_asset/www/"+ soundfile);
-
-					my_media.play();
-				}
-				else
-				{	// otherwise we were launched because the user touched a notification in the notification tray.
-					if (e.coldstart) ;
-						//$("#app-status-ul").append('<li>--NOTIFICAÇÕES RECEBIDAS--' + '</li>');
-					else ;
-					//$("#app-status-ul").append('<li>--BACKGROUND NOTIFICATION--' + '</li>');
-				}
-					
-				//$("#app-status-ul").append('<li>MENSAGEM -> MSG: ' + e.payload.message + '</li>');
-                //android only
-				//$("#app-status-ul").append('<li>MENSAGEM -> MSGCNT: ' + e.payload.msgcnt + '</li>');
-                //amazon-fireos only
-                //$("#app-status-ul").append('<li>MENSAGEM -> TIMESTAMP: ' + e.payload.timeStamp + '</li>');
-            break;
-            
-            case 'error':
-				//$("#app-status-ul").append('<li>ERRO -> MSG:' + e.msg + '</li>');
-				alert('ERRO -> MSG:' + e.msg )
-            break;
-            
-            default:
-				//$("#app-status-ul").append('<li>EVENTO -> Unknown, an event was received and we do not know what it is</li>');
-            break;
-        }
-    }
-    
-    function tokenHandler (result) {
-        //$("#app-status-ul").append('<li>token: '+ result +'</li>');
-        alert('token: '+ result );
-        // Your iOS push server needs to know the token before it can push to this device
-        // here is where you might want to send it the token for later use.
-    }
-	
-    function successHandler (result) {
-        //$("#app-status-ul").append('<li>sucesso:'+ result +'</li>');
-        alert('sucesso:'+ result);
-    }
-    
-    function errorHandler (error) {
-        //$("#app-status-ul").append('<li>erro:'+ error +'</li>');
-        alert('erro:'+ error);
-    }
-    
-	document.addEventListener('deviceready', onDeviceReady(), true);
+	//document.addEventListener('deviceready', onDeviceReady(), true);
 
 });
