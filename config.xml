@@ -19,6 +19,8 @@
 
     <!-- Requires cli-8.0.0 but we recommend using the latest version. -->
     
+    <preference name="android-minSdkVersion" value="15" />
+
     
     <access origin="*" />
     <allow-navigation href="*" />
