@@ -13,11 +13,11 @@
         Softwares HD
     </author>
     <content src="index.html" />
-    <plugin name="onesignal-cordova-plugin" source="npm" spec="2.4.2" />
+    <gap:plugin name="onesignal-cordova-plugin" spec="^2.4.1" source="npm" /> 
     <!-- Requires cli-8.0.0 but we recommend using the latest version. -->
     <preference name="phonegap-version" value="cli-8.0.0" /> 
     <preference name="android-build-tool" value="gradle" />
-     <uses-sdk android:minSdkVersion="15" 
+    <uses-sdk android:minSdkVersion="15" 
         android:targetSdkVersion="15"
         android:maxSdkVersion="15"
         />
