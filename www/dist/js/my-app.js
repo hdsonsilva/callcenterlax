@@ -86,7 +86,7 @@ $$(document).on('DOMContentLoaded',function(){
 				tmp = '';
 				tmp = "<ul>";
 				$$.each(jsonn.Campanhas, function(index, value){ 
-				     tmp += $$('#listadetalhes').html()+ "<li><div class='item-content'><div class='item-inner'><div class='item-title item-hudson'> "+value.name+" </div></div></div></li>";
+				     tmp += $$('#listadetalhes').html()+ "<li><div class='item-content'><div class='item-inner'><div class='item-title item-hudson'> "+value.name+" </div></d'iv></div></li>";
 				});
 				tmp += "</ul>" ; 
 				$$('#listadetalhes').html( tmp );
@@ -143,7 +143,7 @@ $$(document).on('DOMContentLoaded',function(){
 				$$.each(jsonn, function(index, value){ 
 					 j = '0000' + i ;
 					 j = j.substring((j.length-1)-3);
-				     lista = lista + "<li><div class='item-content'><div class='item-inner'><div class='item-title item-hudson'> "+ j + " | " + value.nomeagente + " | " + value.iniciochamada + " | " + value.phone +" </div></div></div></li>";
+				     lista = lista + "<li><div class='item-content'><div class='item-inner'><div class='item-title item-hudson' style='width:100%'> <div style='display:inline-block;width:15%'>"+ j + "</div><div style='display:inline-block;width:15%'> " + value.nomeagente + " </div><div style='display:inline-block;width:40%'> " + value.iniciochamada + "</div><div style='display:inline-block;width:30%'> " + value.phone +" </div></div></div></div></li>";
 				     i++;
 				});	
 				while(i < controle);
@@ -178,7 +178,7 @@ $$(document).on('DOMContentLoaded',function(){
 				$$.each(jsonn, function(index, value){ 
 					 j = '0000' + i ;
 					 j = j.substring((j.length-1)-3);
-				     lista = lista + "<li><div class='item-content'><div class='item-inner'><div class='item-title item-hudson'> "+ j + " | " + value.nomeagente + " | " + value.iniciochamada + " | " + value.phone +" </div></div></div></li>";
+				     lista = lista + "<li><div class='item-content'><div class='item-inner'><div class='item-title item-hudson' style='width:100%'> <div style='display:inline-block;width:15%'>"+ j + "</div><div style='display:inline-block;width:15%'> " + value.nomeagente + " </div><div style='display:inline-block;width:40%'> " + value.iniciochamada + "</div><div style='display:inline-block;width:30%'> " + value.phone +" </div></div></div></div></li>";
 				     i++;
 				});	
 				while(i < controle);
@@ -213,7 +213,7 @@ $$(document).on('DOMContentLoaded',function(){
 				$$.each(jsonn, function(index, value){ 
 					 j = '0000' + i ;
 					 j = j.substring((j.length-1)-3);
-				     lista = lista + "<li><div class='item-content'><div class='item-inner'><div class='item-title item-hudson'> "+ j + " | " + value.nomeagente + " | " + value.iniciochamada + " | " + value.phone +" </div></div></div></li>";
+				     lista = lista + "<li><div class='item-content'><div class='item-inner'><div class='item-title item-hudson' style='width:100%'> <div style='display:inline-block;width:15%'>"+ j + "</div><div style='display:inline-block;width:15%'> " + value.nomeagente + " </div><div style='display:inline-block;width:40%'> " + value.iniciochamada + "</div><div style='display:inline-block;width:30%'> " + value.phone +" </div></div></div></div></li>";
 				     i++;
 				});	
 				while(i < controle);
@@ -250,7 +250,7 @@ $$(document).on('DOMContentLoaded',function(){
 				$$.each(jsonn, function(index, value){ 
 					 j = '0000' + i ;
 					 j = j.substring((j.length-1)-3);
-				     lista = lista + "<li><div class='item-content'><div class='item-inner'><div class='item-title item-hudson'> "+ j + " | " + value.nomeagente + " | " + value.iniciochamada + " | " + value.phone +" </div></div></div></li>";
+				     lista = lista + "<li><div class='item-content'><div class='item-inner'><div class='item-title item-hudson' style='width:100%'> <div style='display:inline-block;width:15%'>"+ j + "</div><div style='display:inline-block;width:15%'> " + value.nomeagente + " </div><div style='display:inline-block;width:40%'> " + value.iniciochamada + "</div><div style='display:inline-block;width:30%'> " + value.phone +" </div></div></div></div></li>";
 				     i++;
 				});	
 				while(i < controle);
@@ -267,7 +267,7 @@ $$(document).on('DOMContentLoaded',function(){
 						$$.each(jsonn, function(index, value){ 
 							 j = '0000' + i ;
 							 j = j.substring((j.length-1)-3);
-						     lista = lista + "<li><div class='item-content'><div class='item-inner'><div class='item-title item-hudson'> "+ j + " | " + value.nomeagente + " | " + value.iniciochamada + " | " + value.phone +" </div></div></div></li>";
+						     lista = lista + "<li><div class='item-content'><div class='item-inner'><div class='item-title item-hudson' style='width:100%'> <div style='display:inline-block;width:15%'>"+ j + "</div><div style='display:inline-block;width:15%'> " + value.nomeagente + " </div><div style='display:inline-block;width:40%'> " + value.iniciochamada + "</div><div style='display:inline-block;width:30%'> " + value.phone +" </div></div></div></div></li>";
 						     i++;
 						});	
 						while(i < controle);
