@@ -33,7 +33,6 @@
     
     <platform name="android">
         <allow-intent href="market:*" />
-        <uses-sdk tools:overrideLibrary="org.apache.cordova" />
     </platform>
 
 </widget>
