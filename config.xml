@@ -29,5 +29,6 @@
     <allow-intent href="geo:*" />
     <platform name="android">
         <allow-intent href="market:*" />
+        <uses-sdk tools:overrideLibrary="org.apache.cordova,com.library.plugin" />
     </platform>
 </widget>
