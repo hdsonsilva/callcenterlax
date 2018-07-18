@@ -9,7 +9,7 @@
 	Ele se integra ao sistema Elastix que você usa em sua empresa.
     </description>
 
-    <icon src="callcentericon.png" width="180" height="180" />
+    <icon src="./callcentericon.png" width="180" height="180" />
     
     <author email="contato@softwareshd.com.br" href="http://www.softwareshd.com.br">
         Softwares HD
@@ -21,9 +21,7 @@
     <preference name="android-minSdkVersion" value="16" />
     <!-- Requires cli-8.0.0 but we recommend using the latest version. -->
     <preference name="phonegap-version" value="cli-8.0.0" /> 
-    
-
-    
+    <plugin name="cordova-plugin-whitelist" source="npm" />
    
     <!-- Can omit if not targetting Windows Phone -->
     <preference name="windows-appx-target" value="8.1-phone" />
