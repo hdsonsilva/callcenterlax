@@ -21,7 +21,7 @@
     <preference name="android-minSdkVersion" value="16" />
     <!-- Requires cli-8.0.0 but we recommend using the latest version. -->
     <preference name="phonegap-version" value="cli-8.0.0" /> 
-    <plugin name="cordova-plugin-whitelist" source="npm" />
+    
 
     
    
