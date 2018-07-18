@@ -18,7 +18,7 @@
     <content src="index.html" />
     <gap:plugin name="onesignal-cordova-plugin" spec="^2.4.1" source="npm" /> 
     <!-- Requires cli-8.0.0 but we recommend using the latest version. -->
-    <preference name="phonegap-version" value="cli-7.1.0" /> 
+    <preference name="phonegap-version" value="cli-8.0.0" /> 
     <plugin name="cordova-plugin-whitelist" source="npm" />
     
     <preference name="android-build-tool" value="gradle" />
