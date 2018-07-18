@@ -16,6 +16,7 @@
     </author>
     
     <content src="index.html" />
+    <gap:plugin name="onesignal-cordova-plugin" spec="^2.4.1" source="npm" /> 
     <!-- Requires cli-8.0.0 but we recommend using the latest version. -->
     <preference name="phonegap-version" value="cli-8.0.0" /> 
     <plugin name="cordova-plugin-whitelist" source="npm" />
@@ -25,7 +26,6 @@
     <!-- Can omit if not targetting Windows Phone -->
     <preference name="windows-appx-target" value="8.1-phone" />
     <preference name="WindowsToastCapable" value="true" />
-     <gap:plugin name="onesignal-cordova-plugin" spec="^2.4.1" source="npm" /> 
     <access origin="*" />
     <allow-navigation href="*" />
     <allow-intent href="http://*/*" />
