@@ -35,6 +35,12 @@
     
     <platform name="android">
         <allow-intent href="market:*" />
+        <icon density="ldpi" src="./callcentericon.png" />
+        <icon density="mdpi" src="./callcentericon.png" />
+        <icon density="hdpi" src="./callcentericon.png" />
+        <icon density="xhdpi" src="./callcentericon.png" />
+        <icon density="xxhdpi" src="./callcentericon.png" />
+        <icon density="xxxhdpi" src="./callcentericon.png" />
     </platform>
 
 </widget>
